@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Disciplinas</title>
+    <link rel="stylesheet" href="./estilos/estilo.css">
+</head>
+<body>
+    <nav>
+        <h1>Cadastro de Disciplinas</h1>
+        <button onclick="showRegister()">Cadastrar</button>
+        <button onclick="showView()">Ver Cadastro</button>
+    </nav>
+
+    <div id="register" class="form-container">
+        <h2>Formulário de Cadastro</h2>
+        <form id="cadastroForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+
+            <label for="matricula">Número de Matrícula:</label>
+            <input type="text" id="matricula" required pattern="\d{6}" title="Insira exatamente 6 dígitos." maxlength="6">
+            
+            
+
+            <label for="quantidade">Quantidade de Disciplinas:</label>
+            <input type="number" id="quantidade" required min="1" onchange="generateDisciplineInputs()">
+   
+            <div id="disciplinas"></div>
+        </br>
+            <button class="cadast"    type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <div id="view" class="form-container" style="display: none;">
+        <h2>Ver Cadastro</h2>
+        <label for="viewMatricula">Número de Matrícula:</label>
+        <input type="number" id="viewMatricula">
+        <button class="btn-view" onclick="viewCadastro()">Ver</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="./script/javinha.js"></script>
+</body>
+</html>
